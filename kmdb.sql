@@ -208,7 +208,6 @@ VALUES
 ("Selina Kyle"
 );
 
-SELECT * FROM studios; 
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -217,7 +216,8 @@ SELECT * FROM studios;
 
 -- The SQL statement for the movies output
 -- TODO!
-SELECT * FROM movies; 
+SELECT movies.title, movies.year_released, movies.rating, studios.studio_name
+FROM movies INNER JOIN studios ON studios.ID = movies.studio_id;
 
 -- Prints a header for the cast output
 .print ""
@@ -225,7 +225,8 @@ SELECT * FROM movies;
 .print "========"
 .print ""
 
+SELECT movies.title, actors.name, actors.role
+FROM actors INNER JOIN movies ON movies.id = actors.movie_id
 
 -- The SQL statement for the cast output
 -- TODO!
-SELECT * FROM roles; 
