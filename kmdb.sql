@@ -225,8 +225,9 @@ FROM movies INNER JOIN studios ON studios.ID = movies.studio_id;
 .print "========"
 .print ""
 
-SELECT movies.title, actors.name, actors.role
-FROM actors INNER JOIN movies ON movies.id = actors.movie_id
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.name, actors.role
+FROM actors INNER JOIN movies ON movies.id = actors.movie_id
